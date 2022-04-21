@@ -1,8 +1,7 @@
-import React, { FC } from 'react'
+import { FC } from 'react';
 interface IWeather {
   weather: any;
   city: string;
-
 }
 const Weather: FC<IWeather> = ({ weather, city }) => {
   const tem = Number(Math.round(weather?.main.temp - 273.15));
@@ -12,7 +11,6 @@ const Weather: FC<IWeather> = ({ weather, city }) => {
       <div>
         <h1 className='error'>Город <span style={{ color: "red" }}>"{city}"</span> не найден </h1>
       </div>
-
     )
   }
   return (
@@ -34,7 +32,6 @@ const Weather: FC<IWeather> = ({ weather, city }) => {
                 Feels like
               </div>
             </p>
-
             <p>
               <div className="h1">
                 {weather.main ? weather.main.humidity : null}%
@@ -50,7 +47,6 @@ const Weather: FC<IWeather> = ({ weather, city }) => {
               <div className="h2">
                 Wind
               </div>
-
             </p>
           </div>
         </div>
