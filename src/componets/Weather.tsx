@@ -1,12 +1,34 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 interface IWeather {
   weather: any;
   city: string;
 }
 const Weather: FC<IWeather> = ({ weather, city }) => {
-  const tem = Number(Math.round(weather?.main.temp - 273.15));
-  console.log(weather);
-  if (weather === null || weather === undefined) {
+  const [color, setColor] = useState<string>("");
+  let weathers = weather?.weather[0].icon;
+  let weat = weather?.weather[0].main;
+  console.log(weathers)
+  useEffect(() => {
+    const temperature: number = Number(Math.round(weather?.main.temp - 273.15));
+    if (temperature > 0 && temperature <= 5) {
+      setColor("#00ff00")
+    }
+    else if (temperature > 5 && temperature <= 10) {
+      setColor("#ffff00")
+    }
+    else if (temperature > 10) {
+      setColor("#ff0000")
+    }
+    else if (temperature < 0) {
+      setColor("#0000ff")
+    }
+  }, [weather])
+  const iconurl =
+    "http://openweathermap.org/img/wn/" +
+    `${weather?.weather[0].icon}` +
+    ".png";
+  const country = weather?.sys.country;
+  if (weather === null) {
     return (
       <div>
         <h1 className='error'>Город <span style={{ color: "red" }}>"{city}"</span> не найден </h1>
@@ -19,9 +41,16 @@ const Weather: FC<IWeather> = ({ weather, city }) => {
         <div className="temreture">
           <h1 className="temperature_value">
             <h1 className='town'>{weather.name}</h1>
-            {weather.main ? <h1 className={tem > 5 ? "green" : "red"}>{
-              Math.round(weather.main.temp - 273.15)}°</h1> : null}
+            {weather.main ? <h1
+              style={{ color }}>{
+                Math.round(weather.main.temp - 273.15)}°</h1> : null}
+            <div className="img">
+              <img src={iconurl} />
+              <p>{weat}</p>
+
+            </div>
           </h1>
+          <p style={{ textAlign: "center", color: color }}> {country}</p>
           <div className="info">
             <p>
               <div className="h1">
@@ -51,8 +80,7 @@ const Weather: FC<IWeather> = ({ weather, city }) => {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   )
 }
-
 export default Weather

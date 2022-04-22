@@ -10,10 +10,23 @@
   box-sizing: border-box;
 }
 
+.btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 0px 15px 15px 0px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 12px;
+}
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .App {
   width: 100%;
   height: 100vh;
-  /*   background-image: url("https://vsegda-pomnim.com/uploads/posts/2022-02/1645905921_2-vsegda-pomnim-com-p-oblaka-zakat-foto-3.jpg"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,16 +36,13 @@
   text-align: center;
 }
 .App .search input {
-  max-width: 500px;
+  max-width: 200px;
   height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0 20px;
+  border-radius: 15px 0px 0px 15px;
+  padding: 0 18px;
   font-size: 16px;
   outline: none;
-}
-.App .search input:focus {
-  border: 1px solid #000;
+  border: none;
 }
 
 .weather .city_name_weather {
@@ -92,7 +102,11 @@
 }
 
 .error {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 40px;
+  max-width: 400px;
+  font-size: calc(12px + 1vmin);
+  color: white;
   display: table;
   padding: 10px 20px;
   margin: 0 auto;
@@ -104,4 +118,13 @@
 
 .green {
   color: green;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img p {
+  font-size: 15px;
 }/*# sourceMappingURL=App.css.map */
