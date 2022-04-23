@@ -25,13 +25,12 @@ const App: FC = () => {
       }
    }, [weather])
    const getWeather = () => {
-      if (city.length > 0 && city.trim() !== "") {
+      if (city.length > 0) {
          setError(city)
          setLoading(true);
          try {
             axios.get(url).then(res => {
                setWeather(res.data)
-               console.log(res.data)
             }).catch(err => {
                console.log(err)
                setWeather(null)
