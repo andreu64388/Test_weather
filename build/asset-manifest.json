@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/https//andreu64388.github.io/Test_weather/static/css/main.bd78ef33.css",
+    "main.js": "/https//andreu64388.github.io/Test_weather/static/js/main.1cd4aa1f.js",
+    "index.html": "/https//andreu64388.github.io/Test_weather/index.html",
+    "main.bd78ef33.css.map": "/https//andreu64388.github.io/Test_weather/static/css/main.bd78ef33.css.map",
+    "main.1cd4aa1f.js.map": "/https//andreu64388.github.io/Test_weather/static/js/main.1cd4aa1f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd78ef33.css",
+    "static/js/main.1cd4aa1f.js"
+  ]
+}
